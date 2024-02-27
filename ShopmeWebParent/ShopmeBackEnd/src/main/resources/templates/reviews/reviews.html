@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments :: page_head('Reviews - Shopme Admin', 'none')" />
+
+<body>
+	<div class="container-fluid">
+		<div th:replace="navigation :: menu"></div>
+		<div>
+			<h2>Manage Reviews</h2>
+		</div>
+
+		<!-- Notification And Search Form -->
+		<div th:replace="fragments :: search_form_and_message('/reviews')" />
+
+		<div class="full-details">
+			<table class="table table-bordered table-striped table-hover table-responsive-xl">
+				<thead class="thead-dark">
+					<tr>
+						<th th:replace="fragments :: column_link('/reviews', 'id', 'ID', 'none')" />
+						<th th:replace="fragments :: column_link('/reviews', 'product', 'Product', 'none')" />
+						<th th:replace="fragments :: column_link('/reviews', 'customer', 'Customer', 'none')" />
+						<th th:replace="fragments :: column_link('/reviews', 'rating', 'Rating', 'none')" />
+						<th th:replace="fragments :: column_link('/reviews', 'reviewTime', 'Review Time', 'none')" />
+						<th>Action</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="review : ${listReviews}">
+						<td>[[${review.id}]]</td>
+						<td>
+							<a th:href="@{'/products/detail/' + ${review.product.id}}" class="link-detail-product">
+								[[${review.product.shortName}]]
+							</a>
+						</td>
+						<td>
+							<a th:href="@{'/customers/detail/' + ${review.customer.id}}" class="link-detail-customer">
+								[[${review.customer.fullName}]]
+							</a>
+						</td>
+						<td>[[${review.rating}]] <i class="far fa-star"></i></td>
+						<td>[[${review.reviewTime}]]</td>
+						<td>
+							<a class="fas fa-file-alt fa-2x icon-green link-detail"
+								th:href="@{'/reviews/detail/' + ${review.id}}" title="View details of this review"></a>
+							&nbsp;
+							<a th:href="@{'/reviews/edit/' + ${review.id}}" class="fas fa-edit fa-2x icon-green"
+								title="Edit this review"></a>
+							&nbsp;
+							<a th:href="@{'/reviews/delete/' + ${review.id}}"
+								class="fas fa-trash fa-2x icon-red link-delete" th:entityId="${review.id}"
+								title="Delete this review"></a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<div class="less-details">
+			<div th:each="review : ${listReviews}" class="row m-1">
+				<div class="col-2">
+					<span>[[${review.id}]]</span>
+				</div>
+				<div class="col-10">
+					<div class="mb-1">
+						<span>[[${review.product.shortName}]]</span>
+					</div>
+					<div>
+						&nbsp;
+						<span>[[${review.rating}]] <i class="far fa-star"></i></span>
+						&nbsp;
+						<a class="fas fa-file-alt fa-2x icon-green link-detail"
+							th:href="@{'/reviews/detail/' + ${review.id}}" title="View details of this review"></a>
+						&nbsp;
+						<a th:href="@{'/reviews/edit/' + ${review.id}}" class="fas fa-edit fa-2x icon-green"
+							title="Edit this review"></a>
+						&nbsp;
+						<a th:href="@{'/reviews/delete/' + ${review.id}}"
+							class="fas fa-trash fa-2x icon-red link-delete" th:entityId="${review.id}"
+							title="Delete this review"></a>
+					</div>
+				</div>
+				<div>&nbsp;</div>
+			</div>
+		</div>
+
+		<div th:replace="fragments :: pagination('/reviews', 'reviews')"></div>
+
+		<div th:replace="modal_fragments :: confirm_modal" />
+
+		<div class="modal fade" id="xlargeModal">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+				</div>
+			</div>
+		</div>
+
+		<div class="modal fade" id="detailModal">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+				</div>
+			</div>
+		</div>
+
+		<div th:replace="fragments :: footer"></div>
+
+	</div>
+	<script th:src="@{/js/common_list.js}"></script>
+	<script type="text/javascript">
+		var moduleURL = "[[@{/reviews}]]";
+		var entityName = "review";
+
+		$(document).ready(function () {
+			$(".link-delete").on("click", function (e) {
+
+				e.preventDefault();
+
+				showDeleteConfirmModal($(this), 'review');
+			});
+			
+			handleProductDetailLink();
+			handleCustomerDetailLink();
+			handleDefaultDetailLinkClick();
+		});
+
+		function handleProductDetailLink() {
+			handleDetailLinkClick(".link-detail-product", "#xlargeModal");
+		}
+
+		function handleCustomerDetailLink() {
+			handleDetailLinkClick(".link-detail-customer", "#detailModal");
+		}
+
+	</script>
+</body>
+
+</html>

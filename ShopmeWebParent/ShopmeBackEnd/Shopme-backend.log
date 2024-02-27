@@ -1,0 +1,48 @@
+2023-03-27T18:45:15.490+02:00  INFO 79992 --- [restartedMain] c.shopme.admin.ShopmeBackEndApplication  : Starting ShopmeBackEndApplication using Java 18.0.2.1 with PID 79992 (/Applications/Dev/java/ShopmeProject/ShopmeWebParent/ShopmeBackEnd/target/classes started by mohammedabdul-aziz in /Applications/Dev/java/ShopmeProject/ShopmeWebParent/ShopmeBackEnd)
+2023-03-27T18:45:15.490+02:00  INFO 79992 --- [restartedMain] c.shopme.admin.ShopmeBackEndApplication  : No active profile set, falling back to 1 default profile: "default"
+2023-03-27T18:45:15.618+02:00  INFO 79992 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-03-27T18:45:15.626+02:00  INFO 79992 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 2 JPA repository interfaces.
+2023-03-27T18:45:15.704+02:00  INFO 79992 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-03-27T18:45:15.705+02:00  INFO 79992 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-27T18:45:15.705+02:00  INFO 79992 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.5]
+2023-03-27T18:45:15.716+02:00  INFO 79992 --- [restartedMain] o.a.c.c.C.[.[localhost].[/shopme-admin]  : Initializing Spring embedded WebApplicationContext
+2023-03-27T18:45:15.716+02:00  INFO 79992 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 224 ms
+2023-03-27T18:45:15.746+02:00  INFO 79992 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-03-27T18:45:15.749+02:00  WARN 79992 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000021: Encountered deprecated setting [javax.persistence.sharedCache.mode], use [jakarta.persistence.sharedCache.mode] instead
+2023-03-27T18:45:15.751+02:00  INFO 79992 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-11 - Starting...
+2023-03-27T18:45:15.763+02:00  INFO 79992 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-11 - Added connection com.mysql.cj.jdbc.ConnectionImpl@64fd9d6c
+2023-03-27T18:45:15.763+02:00  INFO 79992 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-11 - Start completed.
+2023-03-27T18:45:15.763+02:00  INFO 79992 --- [restartedMain] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-03-27T18:45:15.763+02:00  WARN 79992 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2023-03-27T18:45:15.805+02:00  INFO 79992 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-03-27T18:45:15.805+02:00  INFO 79992 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-03-27T18:45:15.864+02:00  WARN 79992 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-03-27T18:45:15.877+02:00  INFO 79992 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-03-27T18:45:16.033+02:00  INFO 79992 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@696edd7d, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6a6af51, org.springframework.security.web.context.SecurityContextHolderFilter@554806cf, org.springframework.security.web.header.HeaderWriterFilter@4d69857e, org.springframework.security.web.csrf.CsrfFilter@329e7d3a, org.springframework.security.web.authentication.logout.LogoutFilter@2d9a8652, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@57eb8b39, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@147ed6f1, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@39b2b1c0, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@2e3a3f80, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@d1f4eff, org.springframework.security.web.access.ExceptionTranslationFilter@bc4d4ba, org.springframework.security.web.access.intercept.AuthorizationFilter@63a180c9]
+2023-03-27T18:45:16.037+02:00  WARN 79992 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/images/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-03-27T18:45:16.037+02:00  INFO 79992 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will not secure Mvc [pattern='/images/**']
+2023-03-27T18:45:16.037+02:00  WARN 79992 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/js/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-03-27T18:45:16.037+02:00  INFO 79992 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will not secure Mvc [pattern='/js/**']
+2023-03-27T18:45:16.037+02:00  WARN 79992 --- [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Mvc [pattern='/webjars/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-03-27T18:45:16.037+02:00  INFO 79992 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will not secure Mvc [pattern='/webjars/**']
+2023-03-27T18:45:16.093+02:00  INFO 79992 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-03-27T18:45:16.104+02:00  INFO 79992 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/shopme-admin'
+2023-03-27T18:45:16.110+02:00  INFO 79992 --- [restartedMain] c.shopme.admin.ShopmeBackEndApplication  : Started ShopmeBackEndApplication in 0.655 seconds (process running for 6292.544)
+2023-03-27T18:45:16.112+02:00  INFO 79992 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-03-27T18:47:48.064+02:00  INFO 79992 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2023-03-27T18:47:50.069+02:00  WARN 79992 --- [Thread-43] org.apache.tomcat.util.net.NioEndpoint   : Failed to unlock acceptor for [http-nio-8080] because the local address was not available
+2023-03-27T18:47:50.069+02:00  INFO 79992 --- [Thread-43] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-03-27T18:47:50.069+02:00 ERROR 79992 --- [http-nio-8080-Acceptor] org.apache.tomcat.util.net.Acceptor      : Socket accept failed
+
+java.nio.channels.AsynchronousCloseException: null
+	at java.base/java.nio.channels.spi.AbstractInterruptibleChannel.end(AbstractInterruptibleChannel.java:202) ~[na:na]
+	at java.base/sun.nio.ch.ServerSocketChannelImpl.end(ServerSocketChannelImpl.java:376) ~[na:na]
+	at java.base/sun.nio.ch.ServerSocketChannelImpl.accept(ServerSocketChannelImpl.java:399) ~[na:na]
+	at org.apache.tomcat.util.net.NioEndpoint.serverSocketAccept(NioEndpoint.java:520) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.apache.tomcat.util.net.NioEndpoint.serverSocketAccept(NioEndpoint.java:79) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.apache.tomcat.util.net.Acceptor.run(Acceptor.java:128) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2023-03-27T18:47:50.073+02:00  INFO 79992 --- [Thread-43] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-03-27T18:47:50.074+02:00  INFO 79992 --- [Thread-43] com.zaxxer.hikari.HikariDataSource       : HikariPool-11 - Shutdown initiated...
+2023-03-27T18:47:50.076+02:00  INFO 79992 --- [Thread-43] com.zaxxer.hikari.HikariDataSource       : HikariPool-11 - Shutdown completed.
